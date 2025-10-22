@@ -14,9 +14,9 @@ const About = () => {
     { name: "Python", level: 60 },
     { name: "Django", level: 50 },
     { name: "Docker", level: 40 },
-    { name: "ChatGPT API", level: 70 },
-    { name: "Gemini AI", level: 60 },
-    { name: "DeepSeek", level: 65 }
+    { name: "ChatGPT AI", level: 90 },
+    { name: "Gemini AI", level: 80 },
+    { name: "DeepSeek", level: 85 }
   ];
 
   const achievements = [
