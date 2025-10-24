@@ -30,8 +30,17 @@ const Footer = () => {
         </p>
         <div className="footer-bottom-right">
           <p>Terms of Service</p>
-          <p>Privacy Policy</p>
-          <p className='github-icon'><a href="https://github.com/Ritikjain91"><i class="fab fa-github"></i></a></p>
+       
+<p className='social-links'>
+  <a href="https://github.com/Ritikjain91" target="_blank" rel="noopener noreferrer" className="github-link">
+    <i className="fab fa-github"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/ritik-jain-278b32243/" target="_blank" rel="noopener noreferrer" className="linkedin-link">
+    <i className="fab fa-linkedin"></i>
+  </a>
+</p>
+
+
         </div>
       </div>
     </div>
