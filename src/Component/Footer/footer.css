@@ -81,6 +81,11 @@
 .footer-email-input:hover {
     border: 2px solid white;
 }
+.github-icon a{
+  color: white;
+  padding: 30%;
+
+}
 
 @media (max-width: 768px) {
     .footer {

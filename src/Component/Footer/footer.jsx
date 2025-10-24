@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="footer-bottom-right">
           <p>Terms of Service</p>
           <p>Privacy Policy</p>
-          <p>Connect with me</p>
+          <p className='github-icon'><a href="https://github.com/Ritikjain91"><i class="fab fa-github"></i></a></p>
         </div>
       </div>
     </div>
