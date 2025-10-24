@@ -1,6 +1,6 @@
 import React from 'react';
 import './Hero.css';
-import profile_img from '../../assets/profile_img.svg'; 
+import profile_img from '../../assets/Ritikjainportfolio.png'; 
 function Hero() {
   return (
     <div id='home' className='hero'>
