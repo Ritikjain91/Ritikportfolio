@@ -81,9 +81,31 @@
 .footer-email-input:hover {
     border: 2px solid white;
 }
-.github-link {
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.github-link i {
+  font-size: 24px;
   color: white;
-  margin-right: 2em;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.linkedin-link i {
+  font-size: 24px;
+  color: #0077b5;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.github-link:hover i {
+  color: #333;
+  transform: scale(1.2);
+}
+
+.linkedin-link:hover i {
+  color: #005582;
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
