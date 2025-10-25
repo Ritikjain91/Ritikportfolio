@@ -20,7 +20,8 @@ function Hero() {
           Connect With Me
         </div>
         <div className="hero-resume">
-          My Resume
+          
+        <a href="https://drive.google.com/file/d/12RDzyWgyLjgJNKlLDIBSkPnV1depXtRX/view?usp=sharing">My Resume</a>
         </div>
       </div>
     </div>

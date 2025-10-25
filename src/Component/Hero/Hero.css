@@ -50,6 +50,12 @@
    border-radius: 50px;
     border: 2px solid white;
     cursor: pointer;
+   
+}
+.hero-connect a, .hero-resume a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
 }
 .hero-connect:hover, .hero-resume:hover {
     background-color:2px solid white; /* Example hover effect */
