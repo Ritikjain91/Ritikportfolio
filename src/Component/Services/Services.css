@@ -85,7 +85,7 @@
 
 @media (max-width: 768px) {
     .services {
-        align-items: flex-start;
+        
         gap: 70px;
         margin: 20px 40px;
     }
