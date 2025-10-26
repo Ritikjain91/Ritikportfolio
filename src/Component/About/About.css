@@ -189,10 +189,10 @@
 }
 
 @media (max-width: 768px) {
-  .about {
+  /* .about {
     gap: 60px;
     margin: 50px 20px;
-  }
+  } */
 
   .about-title h1 {
     font-size: 50px;

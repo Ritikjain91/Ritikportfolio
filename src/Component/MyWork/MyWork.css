@@ -95,7 +95,7 @@
     .my-work{
     gap: 50px;
     margin: 50px 10px;
-    align-items: start;
+    
     }
     .mywork-title h1{
         padding: 0;
@@ -107,7 +107,7 @@
         margin-right: -20px;
     }
     .mywork-container{
-        display: inline;
+        display: contents;
     }
     .mywork-container img{
         width: 100%;
