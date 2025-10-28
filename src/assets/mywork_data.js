@@ -25,7 +25,7 @@ const mywork_data = [
         w_name:"Blog Application",
         w_img:project3_img,
         w_link:"https://github.com/Ritikjain91/realblog",
-        w_live:"https://ritikportfolio-sepia.vercel.app/"
+        w_live:"https://realblog-theta.vercel.app/"
     },
     {
         w_no:4,
