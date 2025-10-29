@@ -17,7 +17,7 @@ const mywork_data = [
         w_no:2,
         w_name:"AI Software Company Website",
         w_img:project2_img,
-        w_link:"https://github.com/yourusername/ai-company-website",
+        w_link:"https://github.com/Ritikjain91/AiSoftSoftware-Solution",
         w_live:"https://profound-douhua-2992fc.netlify.app/"
     },
     {
@@ -31,7 +31,7 @@ const mywork_data = [
         w_no:4,
         w_name:"Netflix Clone",
         w_img:project4_img,
-        w_link:"https://github.com/yourusername/netflix-clone",
+        w_link:"https://github.com/Ritikjain91/Netflix-Clone",
         w_live:"https://669a316e28818db0ae4f9f2e--cute-cascaron-e7c739.netlify.app/"
     },
     {
