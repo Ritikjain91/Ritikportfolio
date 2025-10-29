@@ -103,8 +103,8 @@
         font-weight: 600;
     }
     .mywork-title img{
-        width: 130px;
-        margin-right: -20px;
+        width: 100px;
+        margin-right: 7em;
     }
     .mywork-container{
         display: contents;
