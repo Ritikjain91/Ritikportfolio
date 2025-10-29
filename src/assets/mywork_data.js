@@ -11,7 +11,7 @@ const mywork_data = [
         w_name:"Chatting Application",
         w_img:project1_img,
         w_link:"https://github.com/Ritikjain91/OndealChatApp",
-        w_live:"https://ondeal-chat-app.vercel.app/"
+        // w_live:"https://ondeal-chat-app.vercel.app/"
     },
     {
         w_no:2,
