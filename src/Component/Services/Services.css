@@ -128,7 +128,7 @@
 @media (max-width: 480px) {
     .services {
         gap: 50px;
-        margin: 20px;
+        margin: 0.5em;
     }
 
     .services-title h1 {
