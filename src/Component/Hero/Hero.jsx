@@ -21,7 +21,7 @@ function Hero() {
         </div>
         <div className="hero-resume">
           
-        <a href="https://drive.google.com/file/d/12RDzyWgyLjgJNKlLDIBSkPnV1depXtRX/view?usp=sharing">My Resume</a>
+        <a href="https://resume-gilt-tau.vercel.app/">My Resume</a>
         </div>
       </div>
     </div>
