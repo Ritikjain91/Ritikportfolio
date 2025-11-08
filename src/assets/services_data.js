@@ -26,7 +26,7 @@ const Services_Data = [
     },
     {
         s_no:"06",
-        s_name:"AnDroid Development",
+        s_name:"Android Development",
         s_desc:"Creating custom android apps  tailored to specific business needs,..."
     },
 ]

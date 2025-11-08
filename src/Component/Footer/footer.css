@@ -107,6 +107,16 @@
   color: #005582;
   transform: scale(1.2);
 }
+.leetcode-link{
+    transition: transform 0.3s, color 0.3s;
+
+}
+
+.leetcode-link:hover {
+  color: #cc7000;
+  transform: scale(1.2);
+}
+
 
 @media (max-width: 768px) {
     .footer {

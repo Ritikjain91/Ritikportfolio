@@ -2,6 +2,7 @@
 import './footer.css';
 import footer_logo from '../../assets/logo.svg';
 import user_icon from '../../assets/user_icon.svg';
+import { SiLeetcode } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -38,6 +39,14 @@ const Footer = () => {
   <a href="https://www.linkedin.com/in/ritik-jain-451r1b/" target="_blank" rel="noopener noreferrer" className="linkedin-link">
     <i className="fab fa-linkedin"></i>
   </a>
+    <a
+        href="https://leetcode.com/u/Ritikjain_91/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="leetcode-link"
+      >
+        <SiLeetcode size={22} color="#FFA116" />
+      </a>
 </p>
 
 
