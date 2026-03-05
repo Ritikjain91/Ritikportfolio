@@ -144,7 +144,10 @@
 
 @media (max-width: 480px) {
     .footer {
-        margin: 30px 20px;
+        margin: 30px 50px;
+    }
+    .footer-logo{
+        margin-top: 8em;
     }
     
     .footer-top-left p {
