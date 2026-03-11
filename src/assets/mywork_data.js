@@ -36,10 +36,10 @@ const mywork_data = [
     },
     {
         w_no:5,
-        w_name:"E-commerce Platform",
+        w_name:"Global Seller Platform",
         w_img:project5_img,
-        w_link:"https://github.com/yourusername/ecommerce-platform",
-        w_live:"https://ecommerce-platform.vercel.app/"
+        w_link:"https://github.com/yourusername/global-seller-platform",
+        w_live:"https://global-seller-platform.vercel.app/"
     },
     {
         w_no:6,
