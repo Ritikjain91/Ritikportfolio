@@ -2,7 +2,7 @@ import project1_img from '../assets/ChattingApp.png'
 import project2_img from '../assets/aisoftcompanywebsite.png'
 import project3_img from '../assets/blogapplogo.png'
 import project4_img from '../assets/netflxbanner.png'
-import project5_img from '../assets/project_5.svg'
+import project5_img from '../assets/project_5.png'
 import project6_img from '../assets/project_6.svg'
 
 const mywork_data = [
