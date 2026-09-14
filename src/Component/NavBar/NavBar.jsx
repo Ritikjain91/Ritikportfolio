@@ -1,71 +1,154 @@
-import React, { useRef, useState } from 'react'
-import './NavBar.css'
-import logo from '../../assets/logo.svg'
-import underline from '../../assets/nav_underline.svg'
+import React, { useState, useEffect } from 'react';
+import './NavBar.css';
+import logo from '../../assets/logo.svg';
+import underline from '../../assets/nav_underline.svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import menu_open from '../../assets/menu_open.svg'
-import menu_close from '../../assets/menu_close.svg'
-
-
+import menu_open from '../../assets/menu_open.svg';
+import menu_close from '../../assets/menu_close.svg';
 
 function NavBar() {
-  const [Menu,SetMenu]=useState("home");
-  const menuRef =useRef();
-  const openMenu=()=>{
-    menuRef.current.style.right="0";
-  }
-  const closeMenu=()=>{
-    menuRef.current.style.right="-350px";
-  }
+  const [menu, setMenu] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const openMenu = () => setIsMenuOpen(true);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const handleNavClick = (section) => {
+    setMenu(section);
+    closeMenu();
+  };
+
   return (
+    <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-container container">
+        <AnchorLink href="#home" className="logo-link" onClick={() => handleNavClick("home")}>
+          <img src={logo} alt="Ritik Jain Logo" className="nav-logo" />
+        </AnchorLink>
 
-    
-    <div className='navbar'>
-        <img src={logo} alt="" />
-        <img src={menu_open} onClick={openMenu} alt="" className='nav-mob-open' />
-        <ul ref={menuRef} className="nav-menu">
-          <img src={menu_close} onClick={closeMenu} alt="" className='nav-mob-close'/>
-        <li onClick={() => SetMenu("home")}>
-  <AnchorLink href="#home" className="Anchor-link" >
-    <p>Home</p>
-  </AnchorLink>
-  {Menu === "home" ? <img src={underline} alt="underline" /> : null}
-</li>
-<li onClick={() => SetMenu("about")}>
-  <AnchorLink href="#about" className="Anchor-link" offset={50}>
-    <p>About me</p>
-  </AnchorLink>
-  {Menu === "about" ? <img src={underline} alt="underline" /> : null}
-</li>
-<li onClick={() => SetMenu("services")}>
-  <AnchorLink href="#services" className="Anchor-link" offset={50}>
-    <p>Services</p>
-  </AnchorLink>
-  {Menu === "services" ? <img src={underline} alt="underline" /> : null}
-</li>
-<li onClick={() => SetMenu("portfolio")}>
-  <AnchorLink href="#work" className="Anchor-link" offset={50}>
-    <p>Portfolio</p>
-  </AnchorLink>
-  {Menu === "portfolio" ? <img src={underline} alt="underline" /> : null}
-</li>
-<li onClick={() => SetMenu("contact")}>
-  <AnchorLink href="#contact" className="Anchor-link" offset={50}>
-    <p>Contact</p>
-  </AnchorLink>
-  {Menu === "contact" ? <img src={underline} alt="underline" /> : null}
-</li>
+        {/* Mobile menu trigger */}
+        <button 
+          className="nav-mob-open" 
+          onClick={openMenu} 
+          aria-label="Open Navigation Menu"
+        >
+          <img src={menu_open} alt="" />
+        </button>
 
-        </ul>
-        <div className="nav-connect">
-  <a  href="#contact" className="Anchor-link" offset={50}>Connect with me</a>
- 
-</div>
+        {/* Backdrop for mobile */}
+        <div 
+          className={`nav-overlay ${isMenuOpen ? 'active' : ''}`} 
+          onClick={closeMenu}
+          aria-hidden={!isMenuOpen}
+        />
 
-       
-      
-    </div>
-  )
+        {/* Navigation Links */}
+        <nav className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
+          <div className="nav-mob-header">
+            <img src={logo} alt="Logo" className="nav-mob-logo" />
+            <button 
+              className="nav-mob-close" 
+              onClick={closeMenu} 
+              aria-label="Close Navigation Menu"
+            >
+              <img src={menu_close} alt="" />
+            </button>
+          </div>
+
+          <ul className="nav-links">
+            <li className={menu === "home" ? "active" : ""}>
+              <AnchorLink 
+                href="#home" 
+                className="anchor-link" 
+                onClick={() => handleNavClick("home")}
+              >
+                <span>Home</span>
+                {menu === "home" && <img src={underline} alt="" className="nav-underline" />}
+              </AnchorLink>
+            </li>
+
+            <li className={menu === "about" ? "active" : ""}>
+              <AnchorLink 
+                href="#about" 
+                offset={80} 
+                className="anchor-link" 
+                onClick={() => handleNavClick("about")}
+              >
+                <span>About Me</span>
+                {menu === "about" && <img src={underline} alt="" className="nav-underline" />}
+              </AnchorLink>
+            </li>
+
+            <li className={menu === "services" ? "active" : ""}>
+              <AnchorLink 
+                href="#services" 
+                offset={80} 
+                className="anchor-link" 
+                onClick={() => handleNavClick("services")}
+              >
+                <span>Services</span>
+                {menu === "services" && <img src={underline} alt="" className="nav-underline" />}
+              </AnchorLink>
+            </li>
+
+            <li className={menu === "portfolio" ? "active" : ""}>
+              <AnchorLink 
+                href="#work" 
+                offset={80} 
+                className="anchor-link" 
+                onClick={() => handleNavClick("portfolio")}
+              >
+                <span>Portfolio</span>
+                {menu === "portfolio" && <img src={underline} alt="" className="nav-underline" />}
+              </AnchorLink>
+            </li>
+
+            <li className={menu === "contact" ? "active" : ""}>
+              <AnchorLink 
+                href="#contact" 
+                offset={80} 
+                className="anchor-link" 
+                onClick={() => handleNavClick("contact")}
+              >
+                <span>Contact</span>
+                {menu === "contact" && <img src={underline} alt="" className="nav-underline" />}
+              </AnchorLink>
+            </li>
+          </ul>
+
+          <div className="nav-mob-footer">
+            <AnchorLink 
+              href="#contact" 
+              offset={80} 
+              className="nav-mob-connect-btn" 
+              onClick={() => handleNavClick("contact")}
+            >
+              Connect with me
+            </AnchorLink>
+          </div>
+        </nav>
+
+        {/* Desktop CTA Button */}
+        <div className="nav-connect-wrapper">
+          <AnchorLink href="#contact" offset={80} className="nav-connect-btn">
+            <span>Connect with me</span>
+          </AnchorLink>
+        </div>
+      </div>
+    </header>
+  );
 }
 
-export default NavBar
+export default NavBar;

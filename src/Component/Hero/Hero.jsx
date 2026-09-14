@@ -1,30 +1,91 @@
 import React from 'react';
 import './Hero.css';
-import profile_img from '../../assets/Ritikjainportfolio.png'; 
+import profile_img from '../../assets/Ritikjainportfolio.png';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { FaGithub, FaLinkedinIn, FaExternalLinkAlt } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
+
 function Hero() {
   return (
-    <div id='home' className='hero'>
-      <img src={profile_img} alt="Profile" />
-      <h1>
-        <span>Hey, My Name is Ritik </span> 
-        I am a full stack developer based in India
-      </h1>
-      <p>
-  I am a passionate software engineer with 2 years of experience specializing in both frontend and backend development. I have a solid foundation in React.js, SQL, HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, and Data Structures and Algorithms (DSA). I have solved many problems on LeetCode and HackerRank. My expertise extends to using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Git for version control. I have successfully integrated complex functionalities to build robust and scalable applications.
-  <br /><br />
-  I am currently exploring new opportunities in both multinational corporations and startups, aiming to leverage my skills in creating innovative solutions. My professional approach is driven by a commitment to quality and efficiency, ensuring that every project I work on meets the highest standards.
-</p>
-
-      <div className="hero-action">
-        <div className="hero-connect">
-          Connect With Me
+    <section id='home' className='hero-section'>
+      <div className='hero-container container'>
+        {/* Availability Badge */}
+        <div className="hero-badge">
+          <span className="status-dot"></span>
+          <span>Available for New Opportunities</span>
         </div>
-        <div className="hero-resume">
+
+        {/* Profile Avatar Frame */}
+        <div className="hero-avatar-wrapper">
+          <div className="hero-avatar-glow"></div>
+          <div className="hero-avatar">
+            <img src={profile_img} alt="Ritik Jain" />
+          </div>
+        </div>
+
+        {/* Title */}
+        <h1 className="hero-title">
+          <span>Hey, I'm Ritik Jain</span>
+          <span className="hero-subtitle">Full Stack Software Engineer based in India</span>
+        </h1>
+
+        {/* Bio */}
+        <p className="hero-desc">
+          Passionate engineer with <strong>2+ years of experience</strong> crafting performant frontend & scalable backend systems. Specializing in <strong>React.js, Node.js, Express, MongoDB, SQL, Python & AI integrations</strong>. Proven problem solver with 250+ DSA challenges solved on LeetCode & HackerRank.
+        </p>
+
+        {/* Actions */}
+        <div className="hero-action">
+          <AnchorLink href="#contact" offset={80} className="hero-btn hero-connect-btn">
+            <span>Connect With Me</span>
+          </AnchorLink>
           
-        <a href="https://resume-gilt-tau.vercel.app/">My Resume</a>
+          <a 
+            href="https://resume-gilt-tau.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hero-btn hero-resume-btn"
+          >
+            <span>My Resume</span>
+            <FaExternalLinkAlt className="btn-icon" />
+          </a>
+        </div>
+
+        {/* Quick Social Links Bar */}
+        <div className="hero-socials">
+          <a 
+            href="https://github.com/Ritikjain91" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="GitHub Profile"
+            className="hero-social-link"
+          >
+            <FaGithub />
+            <span>GitHub</span>
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/ritik-jain-451r1b/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="LinkedIn Profile"
+            className="hero-social-link"
+          >
+            <FaLinkedinIn />
+            <span>LinkedIn</span>
+          </a>
+          <a 
+            href="https://leetcode.com/u/Ritikjain_91/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="LeetCode Profile"
+            className="hero-social-link"
+          >
+            <SiLeetcode color="#FFA116" />
+            <span>LeetCode</span>
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

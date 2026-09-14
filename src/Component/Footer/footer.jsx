@@ -1,59 +1,121 @@
-
+import React, { useState } from 'react';
 import './footer.css';
 import footer_logo from '../../assets/logo.svg';
 import user_icon from '../../assets/user_icon.svg';
+import { FaGithub, FaLinkedinIn, FaArrowUp, FaCheck } from 'react-icons/fa';
 import { SiLeetcode } from "react-icons/si";
 
 const Footer = () => {
+  const [subscribed, setSubscribed] = useState(false);
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email.trim()) {
+      setSubscribed(true);
+      setEmail('');
+      setTimeout(() => setSubscribed(false), 4000);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="footer">
-      <div className="footer-top">
-        <div className="footer-top-left">
-          <img src={footer_logo} alt="Footer Logo" className="footer-logo" />
-          <p>
-            I am a Frontend developer from India with 2+ years of experience as a developer in MNCs and startups.
+    <footer className="footer-wrapper">
+      <div className="footer-container container">
+        {/* Top Footer Section */}
+        <div className="footer-top">
+          <div className="footer-info">
+            <img src={footer_logo} alt="Ritik Jain Logo" className="footer-logo" />
+            <p className="footer-desc">
+              Full Stack Software Engineer with 2+ years of experience developing modern, performant web applications and AI-driven solutions for global clients.
+            </p>
+          </div>
+
+          <div className="footer-newsletter">
+            <h4 className="newsletter-title">Stay in Touch</h4>
+            <form onSubmit={handleSubscribe} className="footer-subscribe-form">
+              <div className="footer-email-box">
+                <img src={user_icon} alt="" className="input-user-icon" />
+                <input 
+                  type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email" 
+                  required
+                  className="footer-email-field"
+                />
+              </div>
+              <button type="submit" className="footer-subscribe-btn">
+                {subscribed ? (
+                  <>
+                    <FaCheck />
+                    <span>Subscribed!</span>
+                  </>
+                ) : (
+                  <span>Subscribe</span>
+                )}
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div className="footer-divider"></div>
+
+        {/* Bottom Footer Section */}
+        <div className="footer-bottom">
+          <p className="footer-copyright">
+            © {new Date().getFullYear()} Ritik Jain. Crafted with passion & precision.
           </p>
-        </div>
-        <div className="footer-top-right">
-          <div className="footer-email-input">
-            <img src={user_icon} alt="User Icon" />
-            <input type="email" placeholder="Enter your Email" />
-          </div>
-          <div className="footer-subscribe">
-            Subscribe
+
+          {/* Social Links */}
+          <div className="footer-socials">
+            <a 
+              href="https://github.com/Ritikjain91" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-btn github"
+              aria-label="GitHub Profile"
+            >
+              <FaGithub />
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/in/ritik-jain-451r1b/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-btn linkedin"
+              aria-label="LinkedIn Profile"
+            >
+              <FaLinkedinIn />
+            </a>
+
+            <a 
+              href="https://leetcode.com/u/Ritikjain_91/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-btn leetcode"
+              aria-label="LeetCode Profile"
+            >
+              <SiLeetcode color="#FFA116" />
+            </a>
+
+            {/* Back to Top */}
+            <button 
+              onClick={scrollToTop} 
+              className="scroll-top-btn" 
+              title="Scroll to top"
+              aria-label="Scroll back to top"
+            >
+              <FaArrowUp />
+            </button>
           </div>
         </div>
       </div>
-      <hr className="footer-divider" />
-      <div className="footer-bottom">
-        <p className="footer-bottom-left">
-          © 2024. All rights reserved by Ritik Jain.
-        </p>
-        <div className="footer-bottom-right">
-          <p>Terms of Service</p>
-       
-<p className='social-links'>
-  <a href="https://github.com/Ritikjain91" target="_blank" rel="noopener noreferrer" className="github-link">
-    <i className="fab fa-github"></i>
-  </a>
-  <a href="https://www.linkedin.com/in/ritik-jain-451r1b/" target="_blank" rel="noopener noreferrer" className="linkedin-link">
-    <i className="fab fa-linkedin"></i>
-  </a>
-    <a
-        href="https://leetcode.com/u/Ritikjain_91/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="leetcode-link"
-      >
-        <SiLeetcode size={22} color="#FFA116" />
-      </a>
-</p>
-
-
-        </div>
-      </div>
-    </div>
+    </footer>
   );
-}
+};
 
 export default Footer;

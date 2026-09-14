@@ -1,74 +1,105 @@
-import React, { useState } from 'react'
-import './MyWork.css'
-import theme_pattern from '../../assets/theme_pattern.svg'
-import mywork_data from '../../assets/mywork_data'
-import arrow_icon from '../../assets/arrow_icon.svg'
+import React, { useState } from 'react';
+import './MyWork.css';
+import theme_pattern from '../../assets/theme_pattern.svg';
+import mywork_data from '../../assets/mywork_data';
+import arrow_icon from '../../assets/arrow_icon.svg';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const MyWork = () => {
   const [showAll, setShowAll] = useState(false);
 
-  const displayedProjects = showAll ? mywork_data : mywork_data.slice(0, 6);
-
-  const handleProjectClick = (work) => {
-    // Open GitHub link when image is clicked
-    if (work.w_link) {
-      window.open(work.w_link, '_blank', 'noopener,noreferrer');
-    }
-  };
-
-  const handleLiveDemoClick = (e, work) => {
-    e.stopPropagation(); // Prevent triggering the image click
-    if (work.w_live) {
-      window.open(work.w_live, '_blank', 'noopener,noreferrer');
-    }
-  };
+  // Show 3 projects initially, or all 6 when toggled
+  const displayedProjects = showAll ? mywork_data : mywork_data.slice(0, 3);
 
   return (
-    <div id='work' className="my-work">
-      <div className="mywork-title">
-        <h1>My Latest Work</h1>
-        <img src={theme_pattern} alt="theme pattern" />
-      </div>
-      
-      <div className="mywork-container">
-        {displayedProjects.map((work, index) => (
-          <div key={index} className="project-item">
-            <img 
-              src={work.w_img} 
-              alt={work.w_name}
-              onClick={() => handleProjectClick(work)}
-              title={`Click to view ${work.w_name} on GitHub`}
-            />
-            <div className="project-info">
-              <h3>{work.w_name}</h3>
-              {work.w_live && (
-                <button 
-                  className="live-demo-btn"
-                  onClick={(e) => handleLiveDemoClick(e, work)}
-                >
-                  Live Demo
-                </button>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-      
-      {mywork_data.length > 3 && (
-        <div 
-          className="mywork-showmore" 
-          onClick={() => setShowAll(!showAll)}
-        >
-          <p>{showAll ? 'Show Less' : 'Show More'}</p>
-          <img 
-            src={arrow_icon} 
-            alt="arrow icon" 
-            style={{ transform: showAll ? 'rotate(180deg)' : 'rotate(0deg)' }}
-          />
+    <section id='work' className="mywork-section">
+      <div className="mywork-container container">
+        {/* Title */}
+        <div className="section-title">
+          <h1>My Latest Work</h1>
+          <img src={theme_pattern} alt="" />
         </div>
-      )}
-    </div>
-  )
-}
+        
+        {/* Project Grid */}
+        <div className="projects-grid">
+          {displayedProjects.map((work, index) => (
+            <div key={index} className="project-card">
+              <div className="project-image-wrapper">
+                <img 
+                  src={work.w_img} 
+                  alt={work.w_name}
+                  loading="lazy"
+                  className="project-image"
+                />
+                <div className="project-overlay-gradient"></div>
+              </div>
 
-export default MyWork
+              <div className="project-card-body">
+                {/* Tech Tags */}
+                {work.w_tags && (
+                  <div className="project-tags">
+                    {work.w_tags.map((tag, tIdx) => (
+                      <span key={tIdx} className="project-tag-pill">{tag}</span>
+                    ))}
+                  </div>
+                )}
+
+                <h3 className="project-title">{work.w_name}</h3>
+                <p className="project-desc">{work.w_desc}</p>
+
+                {/* Actions: GitHub & Live Demo */}
+                <div className="project-actions">
+                  {work.w_link && (
+                    <a 
+                      href={work.w_link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="project-btn code-btn"
+                      title="View GitHub Repository"
+                    >
+                      <FaGithub />
+                      <span>Code</span>
+                    </a>
+                  )}
+
+                  {work.w_live && (
+                    <a 
+                      href={work.w_live} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="project-btn demo-btn"
+                      title="View Live Application"
+                    >
+                      <FaExternalLinkAlt />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Show More / Show Less Toggle Button */}
+        {mywork_data.length > 3 && (
+          <div className="showmore-wrapper">
+            <button 
+              className="mywork-showmore-btn" 
+              onClick={() => setShowAll(!showAll)}
+              aria-label={showAll ? 'Show Fewer Projects' : 'Show All Projects'}
+            >
+              <span>{showAll ? 'Show Less' : `Explore All (${mywork_data.length} Projects)`}</span>
+              <img 
+                src={arrow_icon} 
+                alt="" 
+                className={`showmore-arrow ${showAll ? 'expanded' : ''}`}
+              />
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default MyWork;
