@@ -49,15 +49,16 @@
 .contact-info-card {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.1rem;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 1.1rem 1.4rem;
+  padding: clamp(0.9rem, 2vw, 1.25rem);
   text-decoration: none;
   color: inherit;
   backdrop-filter: blur(12px);
   transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  overflow: hidden;
 }
 
 a.contact-info-card:hover {
@@ -67,8 +68,8 @@ a.contact-info-card:hover {
 }
 
 .contact-icon-box {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
   background: rgba(180, 21, 255, 0.12);
   display: flex;
@@ -78,18 +79,20 @@ a.contact-info-card:hover {
 }
 
 .contact-icon-box img {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }
 
 .contact-info-text {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .info-label {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
@@ -97,9 +100,11 @@ a.contact-info-card:hover {
 }
 
 .info-value {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
   font-weight: 600;
   color: #ffffff;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* Right Column: Contact Form */
@@ -111,12 +116,12 @@ a.contact-info-card:hover {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  padding: clamp(1.2rem, 3vw, 2.2rem);
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.25rem;
 }
 
 .form-group {
@@ -127,27 +132,27 @@ a.contact-info-card:hover {
 }
 
 .form-group label {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: #e5e3f1;
 }
 
 .form-input {
   width: 100%;
-  padding: 0.95rem 1.25rem;
+  padding: clamp(0.8rem, 2vw, 0.95rem) 1.1rem;
   background: var(--bg-input);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   color: #ffffff;
   font-family: var(--font-family);
-  font-size: 1rem;
+  font-size: 16px;
   outline: none;
   transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .form-input::placeholder {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 .form-input:focus {
@@ -158,7 +163,7 @@ a.contact-info-card:hover {
 
 .form-textarea {
   resize: vertical;
-  min-height: 140px;
+  min-height: 130px;
   line-height: 1.6;
 }
 
@@ -168,19 +173,20 @@ a.contact-info-card:hover {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  padding: 0.95rem 2.2rem;
+  padding: 0.9rem 2.2rem;
   background: var(--accent-gradient);
   color: #ffffff;
   border: none;
   border-radius: var(--radius-full);
   font-family: var(--font-family);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(180, 21, 255, 0.3);
   margin-top: 0.5rem;
   align-self: flex-start;
+  min-height: 48px;
 }
 
 .contact-submit-btn:hover:not(:disabled) {
@@ -211,10 +217,11 @@ a.contact-info-card:hover {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  padding: 1rem 1.25rem;
+  padding: 0.9rem 1.15rem;
   border-radius: var(--radius-md);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   line-height: 1.5;
+  word-break: break-word;
   animation: bannerFade 0.3s ease;
 }
 
@@ -242,7 +249,7 @@ a.contact-info-card:hover {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -251,5 +258,31 @@ a.contact-info-card:hover {
   .contact-submit-btn {
     width: 100%;
     align-self: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info-card {
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .contact-icon-box {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-icon-box img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-form {
+    padding: 1.25rem 1rem;
+    gap: 1rem;
+  }
+
+  .contact-headline h2 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
   }
 }

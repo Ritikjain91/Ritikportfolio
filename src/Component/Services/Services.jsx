@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Services.css';
 import theme_pattern from '../../assets/theme_pattern.svg';
 import Services_data from '../../assets/services_data';
@@ -77,6 +77,26 @@ const serviceDetails = [
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(null);
+
+  useEffect(() => {
+    if (selectedService) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && selectedService) {
+        setSelectedService(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedService]);
 
   const openServiceModal = (index) => {
     setSelectedService({

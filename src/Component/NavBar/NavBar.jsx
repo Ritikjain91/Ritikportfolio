@@ -23,8 +23,42 @@ function NavBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 960 && isMenuOpen) {
+        closeMenu();
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMenuOpen]);
+
   const openMenu = () => setIsMenuOpen(true);
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = 'unset';
+  };
 
   const handleNavClick = (section) => {
     setMenu(section);
@@ -40,9 +74,11 @@ function NavBar() {
 
         {/* Mobile menu trigger */}
         <button 
+          type="button"
           className="nav-mob-open" 
           onClick={openMenu} 
           aria-label="Open Navigation Menu"
+          aria-expanded={isMenuOpen}
         >
           <img src={menu_open} alt="" />
         </button>
@@ -55,10 +91,17 @@ function NavBar() {
         />
 
         {/* Navigation Links */}
-        <nav className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
+        <nav 
+          className={`nav-menu ${isMenuOpen ? 'open' : ''}`}
+          aria-label="Main Navigation"
+          aria-hidden={!isMenuOpen}
+        >
           <div className="nav-mob-header">
-            <img src={logo} alt="Logo" className="nav-mob-logo" />
+            <AnchorLink href="#home" className="nav-mob-logo-link" onClick={() => handleNavClick("home")}>
+              <img src={logo} alt="Logo" className="nav-mob-logo" />
+            </AnchorLink>
             <button 
+              type="button"
               className="nav-mob-close" 
               onClick={closeMenu} 
               aria-label="Close Navigation Menu"
