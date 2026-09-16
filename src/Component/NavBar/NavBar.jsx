@@ -66,7 +66,7 @@ function NavBar() {
   };
 
   return (
-    <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`navbar-header ${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="navbar-container container">
         <AnchorLink href="#home" className="logo-link" onClick={() => handleNavClick("home")}>
           <img src={logo} alt="Ritik Jain Logo" className="nav-logo" />
