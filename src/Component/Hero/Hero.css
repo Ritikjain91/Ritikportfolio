@@ -135,6 +135,41 @@
   font-weight: 600;
   color: #eae8f5;
   letter-spacing: -0.01em;
+  min-height: clamp(1.8rem, 3.5vw, 2.5rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.typewriter-text {
+  background: linear-gradient(135deg, #ffffff 15%, #df8908 65%, #b415ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+  font-weight: 600;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 3px;
+  color: #df8908;
+  font-weight: 400;
+  animation: cursorBlink 0.9s infinite;
+  text-shadow: 0 0 10px rgba(223, 137, 8, 0.8), 0 0 20px rgba(180, 21, 255, 0.6);
+}
+
+@keyframes cursorBlink {
+  0%, 45% {
+    opacity: 1;
+  }
+  50%, 95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Bio Description */

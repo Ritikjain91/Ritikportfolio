@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './Hero.css';
 import profile_img from '../../assets/Ritikjainportfolio.png';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
@@ -6,6 +6,48 @@ import { FaGithub, FaLinkedinIn, FaExternalLinkAlt } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 
 function Hero() {
+  const roles = useMemo(() => [
+    "Full Stack Software Engineer",
+    "MERN Stack Developer",
+    "React.js & Node.js Specialist",
+    "Problem Solver (250+ LeetCode DSA)",
+    "Software Engineer based in India"
+  ], []);
+
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [text, setText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+    let timer;
+
+    if (!isDeleting && text === currentRole) {
+      // Full text typed, pause before deleting
+      timer = setTimeout(() => {
+        setIsDeleting(true);
+      }, 1800);
+    } else if (isDeleting && text === '') {
+      // Deletion complete, pause briefly before next role
+      timer = setTimeout(() => {
+        setIsDeleting(false);
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+      }, 350);
+    } else if (isDeleting) {
+      // Deleting character by character
+      timer = setTimeout(() => {
+        setText((prev) => currentRole.substring(0, prev.length - 1));
+      }, 45);
+    } else {
+      // Typing character by character
+      timer = setTimeout(() => {
+        setText((prev) => currentRole.substring(0, prev.length + 1));
+      }, 85);
+    }
+
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, roleIndex, roles]);
+
   return (
     <section id='home' className='hero-section'>
       <div className='hero-container container'>
@@ -23,10 +65,13 @@ function Hero() {
           </div>
         </div>
 
-        {/* Title */}
+        {/* Title with Typing Animation */}
         <h1 className="hero-title">
           <span>Hey, I'm Ritik Jain</span>
-          <span className="hero-subtitle">Full Stack Software Engineer based in India</span>
+          <span className="hero-subtitle" aria-live="polite">
+            <span className="typewriter-text">{text}</span>
+            <span className="typewriter-cursor" aria-hidden="true">|</span>
+          </span>
         </h1>
 
         {/* Bio */}
