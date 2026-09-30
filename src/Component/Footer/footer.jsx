@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="footer-info">
             <img src={footer_logo} alt="Ritik Jain Logo" className="footer-logo" />
             <p className="footer-desc">
-              Full Stack Software Engineer with 2+ years of experience developing modern, performant web applications and AI-driven solutions for global clients.
+              Android Application Developer & Full Stack Software Engineer with 2+ years of experience engineering high-performance mobile apps, offline-ready architectures, and scalable web solutions.
             </p>
           </div>
 

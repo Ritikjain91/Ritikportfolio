@@ -1,34 +1,34 @@
 const Services_Data = [
     {
-        s_no:"01",
-        s_name:"Web Development",
-        s_desc:"Building responsive and dynamic websites using HTML, CSS, JavaScript, and frameworks like React.js...."
+        s_no: "01",
+        s_name: "Native & Cross-Platform Android Apps",
+        s_desc: "Building intuitive, high-performance Android mobile applications using Kotlin, Jetpack Compose, and React Native with Material 3 guidelines and fluid 60+ FPS animations."
     },
     {
-        s_no:"02",
-        s_name:"Full-Stack Development",
-        s_desc:"Creating full-stack applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) and SQL databases..."
+        s_no: "02",
+        s_name: "Full-Stack Web Development",
+        s_desc: "Architecting end-to-end web applications with React.js, Node.js, Express, MongoDB, and SQL databases, delivering secure RESTful APIs and ultra-fast page speeds."
     },
     {
-        s_no:"03",
-        s_name:"SEO Optimization",
-        s_desc:"WImplementing best practices for search engine optimization to improve website visibility and ranking..."
+        s_no: "03",
+        s_name: "Mobile Architecture & Offline-First DB",
+        s_desc: "Designing scalable MVVM/MVI architectures with local database caching (Room DB, SQLite, DataStore) ensuring full functionality even in offline environments."
     },
     {
-        s_no:"04",
-        s_name:"Website Maintenance and Support",
-        s_desc:"Providing ongoing maintenance, updates, and technical support for websites and applications..."
+        s_no: "04",
+        s_name: "Real-Time Sockets & Push Notifications",
+        s_desc: "Integrating instant bi-directional communication using Socket.io and WebSockets, alongside Firebase Cloud Messaging (FCM) for targeted background push alerts."
     },
     {
-        s_no:"05",
-        s_name:"Database Management",
-        s_desc:"Designing, optimizing, and managing databases, both SQL and NoSQL..."
+        s_no: "05",
+        s_name: "App Profiling & Performance Tuning",
+        s_desc: "Profiling Android memory usage, eliminating memory leaks, reducing APK bundle sizes, optimizing battery consumption, and accelerating render cycles."
     },
     {
-        s_no:"06",
-        s_name:"Android Development",
-        s_desc:"Creating custom android apps  tailored to specific business needs,..."
-    },
-]
+        s_no: "06",
+        s_name: "Play Store Release & CI/CD Pipelines",
+        s_desc: "Managing full application release lifecycles: Google Play Console compliance, app bundle (AAB) signing, automated builds via EAS/Gradle, and continuous updates."
+    }
+];
  
 export default Services_Data;

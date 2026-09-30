@@ -2,16 +2,17 @@ import React, { useState, useEffect, useMemo } from 'react';
 import './Hero.css';
 import profile_img from '../../assets/Ritikjainportfolio.png';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { FaGithub, FaLinkedinIn, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaExternalLinkAlt, FaAndroid } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 
 function Hero() {
   const roles = useMemo(() => [
-    "Full Stack Software Engineer",
-    "MERN Stack Developer",
-    "React.js & Node.js Specialist",
-    "Problem Solver (250+ LeetCode DSA)",
-    "Software Engineer based in India"
+    "Android Application Developer",
+    "Full Stack Web Engineer",
+    "Kotlin & Jetpack Compose Specialist",
+    "React Native & Mobile App Architect",
+    "MERN Stack & REST API Engineer",
+    "Problem Solver (250+ LeetCode DSA)"
   ], []);
 
   const [roleIndex, setRoleIndex] = useState(0);
@@ -54,7 +55,7 @@ function Hero() {
         {/* Availability Badge */}
         <div className="hero-badge">
           <span className="status-dot"></span>
-          <span>Available for New Opportunities</span>
+          <span>Available for Android & Web Opportunities</span>
         </div>
 
         {/* Profile Avatar Frame */}
@@ -76,13 +77,28 @@ function Hero() {
 
         {/* Bio */}
         <p className="hero-desc">
-          Passionate engineer with <strong>2+ years of experience</strong> crafting performant frontend & scalable backend systems. Specializing in <strong>React.js, Node.js, Express, MongoDB, SQL, Python & AI integrations</strong>. Proven problem solver with 250+ DSA challenges solved on LeetCode & HackerRank.
+          Passionate engineer with <strong>2+ years of experience</strong> architecting fluid <strong>Android applications</strong> (Kotlin, Jetpack Compose, React Native, SQLite/Room) and scalable <strong>Full Stack web platforms</strong> (React.js, Node.js, Express, MongoDB, SQL). Builder of production-ready mobile apps featuring real-time Socket.io, offline caching, and clean Material 3 design.
         </p>
+
+        {/* Feature Highlights Pills */}
+        <div className="hero-tech-pills">
+          <span className="tech-pill">
+            <FaAndroid className="pill-icon android-green" /> Native & React Native Android
+          </span>
+          <span className="tech-pill">Full Stack Web (MERN / SQL)</span>
+          <span className="tech-pill">Real-Time Socket.io</span>
+          <span className="tech-pill">250+ LeetCode DSA</span>
+        </div>
 
         {/* Actions */}
         <div className="hero-action">
           <AnchorLink href="#contact" offset={80} className="hero-btn hero-connect-btn">
             <span>Connect With Me</span>
+          </AnchorLink>
+
+          <AnchorLink href="#work" offset={80} className="hero-btn hero-android-btn">
+            <FaAndroid className="btn-icon" />
+            <span>View Android Apps</span>
           </AnchorLink>
           
           <a 

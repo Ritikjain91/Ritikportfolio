@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Ritik Jain - Android Developer & Full Stack Software Engineer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Modern, high-performance developer portfolio showcasing dual expertise in **Android Application Development** (Native Kotlin, Jetpack Compose, React Native, SQLite/Room, Socket.io) and **Full Stack Web Engineering** (React.js, Node.js, Express, MongoDB, SQL).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌟 Key Features
 
-### `npm start`
+### 1. Android & Mobile Showcase
+- **PulseChat App**: Featured real-time messaging application with instant Socket.io delivery, SQLite persistence, typing indicators, user presence, and real-time chat history.
+- **Direct App Download (.zip / APK)**: Downloadable directly from the portfolio.
+- **Interactive Screenshot Gallery**: In-depth modal showcasing real mobile screens (Chat view, Login & identity switcher, Active members drawer, Emulator preview).
+- **Native Android Tech Stack**: Jetpack Compose, Material 3, Kotlin Coroutines, StateFlow, Room DB, MVVM Clean Architecture.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Full Stack Web Applications
+- Category filter tabs to seamlessly toggle between **All Work**, **Android & Mobile Apps**, and **Web Platforms**.
+- Chatting Application (Web), AI Enterprise Landing Platform, Movie Discovery App, Netflix Streaming Clone, Global Seller Platform, and Task Management Workspace.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. Interactive Technical Proficiency
+- Filterable skill tabs:
+  - **All Skills**
+  - **Android & Mobile**: Kotlin, Jetpack Compose, React Native, Room DB, SQLite, MVVM, Socket.io
+  - **Web & Backend**: React.js, Node.js, Express.js, MongoDB, SQL, Python
+  - **Architecture & Tools**: Android Studio, Gradle/EAS, Git/GitHub, Docker, AI Integrations
+- Animated skill level meters and architecture focus cards.
 
-### `npm test`
+### 4. Specialized Services
+- Native & Cross-Platform Android Apps (Kotlin, Jetpack Compose, React Native)
+- Full-Stack Web Development (MERN, SQL, REST APIs)
+- Mobile Architecture & Offline-First DB (Room, SQLite, MVVM)
+- Real-Time Sockets & FCM Push Notifications
+- Android App Profiling & Performance Tuning (60fps, Memory optimization)
+- Google Play Store Release & CI/CD Pipelines
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend**: React 18, React Icons, CSS3 (Modern Glassmorphism, CSS Grid & Flexbox)
+- **Mobile Expertise**: Kotlin, Android SDK, Jetpack Compose, React Native / Expo, Room DB, SQLite, Socket.io
+- **Web & Backend**: Node.js, Express, MongoDB, PostgreSQL/MySQL, Python, REST APIs
+- **Typography & Assets**: Outfit (Google Fonts), SVG icons
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Local Development
 
-### `npm run eject`
+```bash
+# Clone the repository
+git clone https://github.com/Ritikjain91/Ritikportfolio.git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Install dependencies
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Start local dev server
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Runs the app on `http://localhost:3000` (or `http://localhost:3001`).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📦 Production Build
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Generates an optimized, production-ready bundle in the `build/` directory.

@@ -6,71 +6,71 @@ import arrow_icon from '../../assets/arrow_icon.svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { 
   FaLaptopCode, 
-  FaLayerGroup, 
-  FaSearchDollar, 
-  FaTools, 
   FaDatabase, 
-  FaMobileAlt, 
   FaTimes, 
-  FaCheckCircle 
+  FaCheckCircle,
+  FaAndroid,
+  FaBolt,
+  FaRocket,
+  FaLayerGroup
 } from 'react-icons/fa';
 
 const serviceIcons = [
+  <FaAndroid />,
   <FaLaptopCode />,
-  <FaLayerGroup />,
-  <FaSearchDollar />,
-  <FaTools />,
   <FaDatabase />,
-  <FaMobileAlt />
+  <FaBolt />,
+  <FaLayerGroup />,
+  <FaRocket />
 ];
 
 const serviceDetails = [
   {
     deliverables: [
-      "Custom responsive web applications with modern React",
-      "Interactive UI with clean component architectures",
-      "Performance optimization & Lighthouse 90+ scores",
-      "Cross-browser compatibility and accessible design"
+      "Native Kotlin & Jetpack Compose apps with Material Design 3",
+      "Cross-platform mobile apps with React Native & Expo",
+      "Fluid 60+ FPS navigation, micro-interactions, and animations",
+      "Adaptive layouts for all Android phone screens & tablets"
     ]
   },
   {
     deliverables: [
-      "End-to-end MERN (MongoDB, Express, React, Node) stacks",
-      "RESTful and GraphQL API design & integration",
-      "Secure user authentication (JWT, OAuth, bcrypt)",
-      "Production deployment and containerization"
+      "End-to-end MERN (MongoDB, Express, React, Node) applications",
+      "RESTful API design, token-based authentication (JWT/OAuth)",
+      "High Lighthouse scores & Core Web Vitals optimization",
+      "Cross-browser testing, SEO schema & responsive design"
     ]
   },
   {
     deliverables: [
-      "Semantic HTML5 structure & Core Web Vitals optimization",
-      "Meta tags, OpenGraph, JSON-LD structured schema",
-      "Fast page load speed & asset compression",
-      "Search engine indexability and sitemap generation"
+      "Clean Architecture with MVVM / MVI and unidirectional data flow",
+      "Offline-first local caching using Room Database & SQLite",
+      "Reactive state handling with Kotlin Coroutines & StateFlow",
+      "DataStore Preferences and secure local storage"
     ]
   },
   {
     deliverables: [
-      "Regular dependency upgrades & security patches",
-      "Bug fixes, performance profiling, and monitoring",
-      "Database backups and continuous integration workflows",
-      "Feature enhancements and redesign rollouts"
+      "Instant real-time messaging with Socket.io & WebSockets",
+      "Firebase Cloud Messaging (FCM) for background push notifications",
+      "RESTful endpoint integration with Retrofit, OkHttp, or Axios",
+      "Third-party SDK integrations (Payment, Maps, Analytics)"
     ]
   },
   {
     deliverables: [
-      "Relational schema modeling (PostgreSQL, MySQL)",
-      "NoSQL document database architecture (MongoDB)",
-      "Query optimization, indexing & latency reduction",
-      "Data migrations, sanitization & backup protocols"
+      "Android Studio memory profiling & LeakCanary leak resolution",
+      "R8 / ProGuard rules and APK bundle size minimization",
+      "Battery drain and background thread optimization via WorkManager",
+      "Frame rate stability and layout rendering benchmarking"
     ]
   },
   {
     deliverables: [
-      "Cross-platform or native Android mobile solutions",
-      "Responsive mobile-first layouts and offline storage",
-      "Push notifications & external API integrations",
-      "Play Store compliance & release readiness"
+      "Google Play Console compliance, policy check & store listing",
+      "Android App Bundle (.aab) generation & cryptographic signing",
+      "EAS & Gradle automated build and release workflows",
+      "Version migration, crash monitoring, and continuous updates"
     ]
   }
 ];

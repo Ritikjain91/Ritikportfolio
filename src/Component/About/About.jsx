@@ -1,32 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './About.css';
 import theme_pattern from '../../assets/theme_pattern.svg';
 import profile_img from '../../assets/ritikportfolio.png';
-import { FaGraduationCap, FaBriefcase, FaCode } from 'react-icons/fa';
+import { 
+  FaGraduationCap, 
+  FaCode, 
+  FaAndroid, 
+  FaGlobe, 
+  FaLayerGroup 
+} from 'react-icons/fa';
 
 const About = () => {
+  const [activeTab, setActiveTab] = useState('all');
+
   const skills = [
-    { name: "React JS & Frontend", level: 85, category: "Frontend" },
-    { name: "JavaScript / ES6+", level: 85, category: "Core" },
-    { name: "Node JS & Express", level: 80, category: "Backend" },
-    { name: "MongoDB & SQL", level: 75, category: "Database" },
-    { name: "HTML5 & Modern CSS", level: 90, category: "Frontend" },
-    { name: "Python & Django", level: 70, category: "Backend" },
-    { name: "Docker & DevOps Basics", level: 65, category: "DevOps" },
-    { name: "AI Integration (ChatGPT/Gemini/DeepSeek)", level: 88, category: "AI Tools" },
-    { name: "Data Structures & Algorithms", level: 80, category: "Core" },
+    // Android & Mobile
+    { name: "Native Android & Kotlin", level: 85, category: "mobile", desc: "Coroutines, Flow, Jetpack" },
+    { name: "Jetpack Compose & Material 3", level: 82, category: "mobile", desc: "Declarative modern UI" },
+    { name: "React Native & Expo", level: 88, category: "mobile", desc: "Cross-platform mobile apps" },
+    { name: "Room DB & SQLite Local Storage", level: 86, category: "mobile", desc: "Offline-first architecture" },
+    { name: "Android Architecture (MVVM / MVI)", level: 85, category: "mobile", desc: "Clean, testable codebases" },
+    { name: "Socket.io & Mobile Networking", level: 88, category: "mobile", desc: "Real-time bi-directional sync" },
+
+    // Web & Backend
+    { name: "React JS & Next.js", level: 90, category: "web", desc: "Component architecture, hooks" },
+    { name: "Node JS & Express", level: 84, category: "web", desc: "RESTful APIs & microservices" },
+    { name: "JavaScript / ES6+ & TypeScript", level: 88, category: "web", desc: "Modern synchronous & async JS" },
+    { name: "MongoDB & SQL (Postgres / MySQL)", level: 80, category: "web", desc: "Data modeling & indexing" },
+    { name: "HTML5 & Modern CSS / Tailwind", level: 92, category: "web", desc: "Responsive glassmorphism UI" },
+    { name: "Python & Backend Scripting", level: 75, category: "web", desc: "Automation, APIs & scripts" },
+
+    // Core & Tools
+    { name: "Data Structures & Algorithms", level: 85, category: "tools", desc: "250+ LeetCode problems" },
+    { name: "Android Studio & Gradle / EAS", level: 84, category: "tools", desc: "Build tools, APK / AAB signing" },
+    { name: "AI APIs (OpenAI, Gemini, DeepSeek)", level: 88, category: "tools", desc: "Intelligent agent integrations" },
+    { name: "Git, GitHub & CI/CD Workflows", level: 85, category: "tools", desc: "Version control & automation" },
   ];
 
+  const filteredSkills = activeTab === 'all' 
+    ? skills 
+    : skills.filter(s => s.category === activeTab);
+
   const highlights = [
-    { icon: <FaBriefcase />, title: "2+ Years", desc: "Full-Stack Development" },
-    { icon: <FaCode />, title: "70+ Repos", desc: "Open-source & Projects" },
+    { icon: <FaAndroid />, title: "Android Dev", desc: "Native & React Native" },
+    { icon: <FaGlobe />, title: "Full-Stack", desc: "MERN & Scalable Web" },
+    { icon: <FaCode />, title: "70+ Repos", desc: "Open-source & Mobile Apps" },
     { icon: <FaGraduationCap />, title: "250+ Solved", desc: "LeetCode & HackerRank" },
   ];
 
   const achievements = [
     { number: "2+", text: "Years of Experience" },
-    { number: "70+", text: "Projects & Repositories" },
-    { number: "10+", text: "Happy Clients & Collaborations" },
+    { number: "15+", text: "Mobile & Web Projects" },
+    { number: "70+", text: "GitHub Repositories" },
     { number: "250+", text: "DSA Problems Solved" }
   ];
 
@@ -47,7 +72,7 @@ const About = () => {
               <img src={profile_img} alt="Ritik Jain" className="about-profile-img" />
               <div className="about-badge-card">
                 <span className="badge-title">Ritik Jain</span>
-                <span className="badge-subtitle">Full Stack Developer</span>
+                <span className="badge-subtitle">Android & Full Stack Developer</span>
               </div>
             </div>
 
@@ -68,29 +93,85 @@ const About = () => {
           <div className="about-right">
             <div className="about-bio">
               <h3 className="about-bio-heading">
-                Building scalable web experiences with modern architecture & passion.
+                Crafting robust Android mobile applications and scalable web platforms.
               </h3>
               <p>
-                I am a dedicated software engineer with 2+ years of professional experience across frontend and backend systems. I specialize in building end-to-end web applications with the <strong>MERN stack</strong> (MongoDB, Express.js, React.js, Node.js), robust <strong>SQL</strong> databases, and clean modern UI systems.
+                I am a dedicated software engineer with <strong>2+ years of professional experience</strong> spanning native & cross-platform <strong>Android application development</strong> and <strong>Full-Stack web engineering</strong>. I specialize in building responsive, offline-ready mobile applications with <strong>Kotlin, Jetpack Compose, React Native, SQLite/Room, and Socket.io</strong>.
               </p>
               <p>
-                My technical versatility extends to <strong>Python, Django, and containerized deployment with Docker</strong>. I actively integrate cutting-edge AI APIs (including OpenAI, Gemini, and DeepSeek) into real-world applications to deliver intelligent, automated user workflows.
+                On the web side, I design and deploy scalable full-stack applications powered by the <strong>MERN stack</strong> (MongoDB, Express.js, React.js, Node.js), relational <strong>SQL</strong> databases, and <strong>Python</strong> backends. I have engineered real-time chat platforms, enterprise landing pages, and API-driven web portals.
               </p>
               <p>
-                With a deep grounding in <strong>Data Structures & Algorithms</strong> and continuous problem-solving on LeetCode, I write clean, maintainable, and high-performance code adhering to industry best practices.
+                My engineering approach is rooted in strong <strong>Data Structures & Algorithms</strong> (250+ challenges solved across LeetCode & HackerRank), clean <strong>MVVM / Clean Architecture</strong>, seamless cloud integrations, and cutting-edge <strong>AI API integrations</strong> (Gemini, OpenAI, DeepSeek).
               </p>
+            </div>
+
+            {/* Android & Web Focus Badges */}
+            <div className="about-focus-cards">
+              <div className="focus-card mobile-card">
+                <div className="focus-card-icon">
+                  <FaAndroid />
+                </div>
+                <div className="focus-card-text">
+                  <h4>Android Mobile Mastery</h4>
+                  <p>Jetpack Compose, Kotlin Coroutines, SQLite/Room persistence, React Native, real-time sockets & APK generation.</p>
+                </div>
+              </div>
+
+              <div className="focus-card web-card">
+                <div className="focus-card-icon">
+                  <FaGlobe />
+                </div>
+                <div className="focus-card-text">
+                  <h4>Full-Stack Web Engineering</h4>
+                  <p>React.js, Node.js, Express, MongoDB, SQL databases, RESTful APIs, modern styling & CI/CD deployment.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         
-        {/* Skills Section */}
+        {/* Skills Section with Filter Tabs */}
         <div className="about-skills-wrapper">
-          <h2 className="skills-heading">Technical Proficiency</h2>
+          <div className="skills-header-row">
+            <h2 className="skills-heading">Technical Proficiency</h2>
+            
+            <div className="skills-tabs">
+              <button 
+                className={`skill-tab-btn ${activeTab === 'all' ? 'active' : ''}`}
+                onClick={() => setActiveTab('all')}
+              >
+                All Skills
+              </button>
+              <button 
+                className={`skill-tab-btn ${activeTab === 'mobile' ? 'active' : ''}`}
+                onClick={() => setActiveTab('mobile')}
+              >
+                <FaAndroid className="tab-icon" /> Android & Mobile
+              </button>
+              <button 
+                className={`skill-tab-btn ${activeTab === 'web' ? 'active' : ''}`}
+                onClick={() => setActiveTab('web')}
+              >
+                <FaGlobe className="tab-icon" /> Web & Backend
+              </button>
+              <button 
+                className={`skill-tab-btn ${activeTab === 'tools' ? 'active' : ''}`}
+                onClick={() => setActiveTab('tools')}
+              >
+                <FaLayerGroup className="tab-icon" /> Architecture & Tools
+              </button>
+            </div>
+          </div>
+
           <div className="skills-grid">
-            {skills.map((skill, index) => (
+            {filteredSkills.map((skill, index) => (
               <div key={index} className="skill-card">
                 <div className="skill-info">
-                  <span className="skill-name">{skill.name}</span>
+                  <div className="skill-title-block">
+                    <span className="skill-name">{skill.name}</span>
+                    {skill.desc && <span className="skill-desc-sub">{skill.desc}</span>}
+                  </div>
                   <span className="skill-percentage">{skill.level}%</span>
                 </div>
                 <div className="skill-bar-track">

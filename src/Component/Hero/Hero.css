@@ -238,8 +238,59 @@
   box-shadow: 0 6px 20px rgba(180, 21, 255, 0.2);
 }
 
+/* Tech Pills */
+.hero-tech-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+  max-width: 800px;
+}
+
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+}
+
+.tech-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(180, 21, 255, 0.4);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.pill-icon.android-green {
+  color: #3ddc84;
+  font-size: 0.95rem;
+}
+
+.hero-android-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  color: #ffffff;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+}
+
+.hero-android-btn:hover {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+  color: #ffffff;
+}
+
 .btn-icon {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 /* Socials Bar */

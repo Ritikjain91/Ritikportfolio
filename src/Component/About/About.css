@@ -184,6 +184,76 @@
   font-weight: 600;
 }
 
+/* Android & Web Focus Cards */
+.about-focus-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.focus-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.focus-card.mobile-card:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.15);
+}
+
+.focus-card.web-card:hover {
+  border-color: rgba(180, 21, 255, 0.5);
+  box-shadow: 0 6px 20px rgba(180, 21, 255, 0.15);
+}
+
+.focus-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.mobile-card .focus-card-icon {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.web-card .focus-card-icon {
+  background: rgba(180, 21, 255, 0.12);
+  color: #b415ff;
+  border: 1px solid rgba(180, 21, 255, 0.25);
+}
+
+.focus-card-text h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.focus-card-text p {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 /* Technical Proficiency Skills */
 .about-skills-wrapper {
   display: flex;
@@ -193,12 +263,71 @@
   width: 100%;
 }
 
+.skills-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
 .skills-heading {
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   font-weight: 700;
-  text-align: center;
   color: #ffffff;
   letter-spacing: -0.01em;
+}
+
+.skills-tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.skill-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(180, 21, 255, 0.4);
+}
+
+.skill-tab-btn.active {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(180, 21, 255, 0.3);
+}
+
+.tab-icon {
+  font-size: 0.85rem;
+}
+
+.skill-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.skill-desc-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
 .skills-grid {
