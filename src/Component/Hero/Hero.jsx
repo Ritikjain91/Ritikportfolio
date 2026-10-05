@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import './Hero.css';
 import profile_img from '../../assets/Ritikjainportfolio.png';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { FaGithub, FaLinkedinIn, FaExternalLinkAlt, FaAndroid } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaExternalLinkAlt, FaAndroid, FaInstagram } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 
 function Hero() {
@@ -143,6 +143,16 @@ function Hero() {
           >
             <SiLeetcode color="#FFA116" />
             <span>LeetCode</span>
+          </a>
+          <a 
+            href="https://www.instagram.com/my__portfolio___/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Instagram Profile"
+            className="hero-social-link hero-social-instagram"
+          >
+            <FaInstagram className="social-icon-instagram" />
+            <span>Instagram</span>
           </a>
         </div>
       </div>

@@ -4,7 +4,7 @@ import themePattern from '../../assets/theme_pattern.svg';
 import mailIcon from '../../assets/mail_icon.svg';
 import locationIcon from '../../assets/location_icon.svg';
 import callIcon from '../../assets/call_icon.svg';
-import { FaPaperPlane, FaSpinner, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
+import { FaPaperPlane, FaSpinner, FaCheckCircle, FaExclamationCircle, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {
   const [status, setStatus] = useState({ state: 'idle', message: '' });
@@ -82,6 +82,21 @@ const Contact = () => {
                 <div className="contact-info-text">
                   <span className="info-label">Call / WhatsApp</span>
                   <span className="info-value">+91 8518900153</span>
+                </div>
+              </a>
+
+              <a 
+                href="https://www.instagram.com/my__portfolio___/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="contact-info-card contact-card-instagram"
+              >
+                <div className="contact-icon-box instagram-box">
+                  <FaInstagram className="contact-social-svg" />
+                </div>
+                <div className="contact-info-text">
+                  <span className="info-label">Instagram</span>
+                  <span className="info-value">@my__portfolio___</span>
                 </div>
               </a>
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './footer.css';
 import footer_logo from '../../assets/logo.svg';
 import user_icon from '../../assets/user_icon.svg';
-import { FaGithub, FaLinkedinIn, FaArrowUp, FaCheck } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaInstagram, FaArrowUp, FaCheck } from 'react-icons/fa';
 import { SiLeetcode } from "react-icons/si";
 
 const Footer = () => {
@@ -100,6 +100,16 @@ const Footer = () => {
               aria-label="LeetCode Profile"
             >
               <SiLeetcode color="#FFA116" />
+            </a>
+
+            <a 
+              href="https://www.instagram.com/my__portfolio___/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-btn instagram"
+              aria-label="Instagram Profile"
+            >
+              <FaInstagram />
             </a>
 
             {/* Back to Top */}

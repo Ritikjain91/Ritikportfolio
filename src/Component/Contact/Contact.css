@@ -76,6 +76,26 @@ a.contact-info-card:hover {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.contact-icon-box.instagram-box {
+  background: rgba(225, 48, 108, 0.12);
+  color: #e1306c;
+}
+
+.contact-social-svg {
+  font-size: 1.35rem;
+}
+
+a.contact-info-card.contact-card-instagram:hover {
+  border-color: rgba(225, 48, 108, 0.5);
+}
+
+a.contact-info-card.contact-card-instagram:hover .instagram-box {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(220, 39, 67, 0.35);
 }
 
 .contact-icon-box img {
