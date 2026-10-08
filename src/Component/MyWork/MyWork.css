@@ -401,6 +401,10 @@
   animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.app-modal-card.web-modal {
+  max-width: 1050px;
+}
+
 @keyframes scaleUp {
   from { transform: scale(0.94); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
@@ -437,6 +441,10 @@
   align-items: start;
 }
 
+.app-modal-content.web-modal-layout {
+  grid-template-columns: minmax(320px, 1.25fr) 1fr;
+}
+
 /* Visual Screenshot Frame */
 .app-modal-visual {
   display: flex;
@@ -456,6 +464,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.visual-screen-frame.web-frame {
+  aspect-ratio: 16 / 10;
+  max-height: 430px;
+}
+
+.visual-screen-frame.mobile-frame {
+  aspect-ratio: 9 / 16;
+  max-height: 480px;
 }
 
 .visual-screen-img {
@@ -510,9 +528,19 @@
   transition: all 0.2s ease;
 }
 
+.thumb-btn.web-thumb {
+  width: 84px;
+  height: 52px;
+}
+
 .thumb-btn.active {
   border-color: #10b981;
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.web-modal .thumb-btn.active {
+  border-color: #b415ff;
+  box-shadow: 0 0 10px rgba(180, 21, 255, 0.5);
 }
 
 .thumb-btn img {
@@ -544,6 +572,12 @@
   background: rgba(16, 185, 129, 0.12);
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-full);
+}
+
+.web-modal .modal-category-badge {
+  color: #e9d5ff;
+  background: rgba(180, 21, 255, 0.16);
+  border: 1px solid rgba(180, 21, 255, 0.3);
 }
 
 .screen-counter {

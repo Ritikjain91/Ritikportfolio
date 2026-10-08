@@ -259,7 +259,7 @@ const MyWork = () => {
         {/* Screenshot Modal for Mobile / Web Apps */}
         {selectedProject && (
           <div className="app-modal-overlay" onClick={closeModal}>
-            <div className="app-modal-card" onClick={(e) => e.stopPropagation()}>
+            <div className={`app-modal-card ${selectedProject.w_category === 'web' ? 'web-modal' : ''}`} onClick={(e) => e.stopPropagation()}>
               <button 
                 className="app-modal-close" 
                 onClick={closeModal}
@@ -268,10 +268,10 @@ const MyWork = () => {
                 <FaTimes />
               </button>
 
-              <div className="app-modal-content">
+              <div className={`app-modal-content ${selectedProject.w_category === 'web' ? 'web-modal-layout' : ''}`}>
                 {/* Image Showcase */}
                 <div className="app-modal-visual">
-                  <div className="visual-screen-frame">
+                  <div className={`visual-screen-frame ${selectedProject.w_category === 'web' ? 'web-frame' : 'mobile-frame'}`}>
                     <img 
                       src={selectedProject.w_screenshots[activeImageIndex]} 
                       alt={`${selectedProject.w_name} screenshot ${activeImageIndex + 1}`}
@@ -304,7 +304,7 @@ const MyWork = () => {
                       {selectedProject.w_screenshots.map((thumb, tIdx) => (
                         <button 
                           key={tIdx} 
-                          className={`thumb-btn ${tIdx === activeImageIndex ? 'active' : ''}`}
+                          className={`thumb-btn ${selectedProject.w_category === 'web' ? 'web-thumb' : ''} ${tIdx === activeImageIndex ? 'active' : ''}`}
                           onClick={() => setActiveImageIndex(tIdx)}
                         >
                           <img src={thumb} alt="" />

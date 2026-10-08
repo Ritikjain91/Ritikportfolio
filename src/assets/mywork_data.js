@@ -3,7 +3,10 @@ import project2_img from '../assets/aisoftcompanywebsite.png';
 import project3_img from '../assets/movieapp.png';
 import project4_img from '../assets/netflxbanner.png';
 import project5_img from '../assets/project_5.png';
-import project6_img from '../assets/project_6.svg';
+
+import fitfab_gym from '../assets/fitfab_gym.png';
+import fitfab_programs from '../assets/fitfab_programs.png';
+import fitfab_schedule from '../assets/fitfab_schedule.png';
 
 import android_chat_screen from '../assets/android_chat_screen.png';
 import android_native_app from '../assets/android_native_app.png';
@@ -86,6 +89,28 @@ const mywork_data = [
     },
     {
         w_no: 4,
+        w_name: "FIT&FAB PRO - Gym & Biomechanics Sanctuary",
+        w_category: "web",
+        w_badge: "Featured Web Platform",
+        w_desc: "High-performance fitness & athletic sanctuary web application featuring an interactive real-time biomechanics simulator, movable 3D athlete lab, dynamic class scheduling, master trainers, and responsive dark/light UI.",
+        w_img: fitfab_gym,
+        w_screenshots: [
+            fitfab_gym,
+            fitfab_programs,
+            fitfab_schedule
+        ],
+        w_tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Biomechanics Lab", "Lucide Icons"],
+        w_link: "https://github.com/Ritikjain91/Gymwebsite",
+        w_live: "https://gymwebsite-gamma-sepia.vercel.app/",
+        w_highlights: [
+            "Interactive real-time biomechanics simulator with dumbbell curl motion & power telemetry",
+            "Filterable masterclass training timetable across 7 days and multiple disciplines",
+            "Sleek athletic dark mode aesthetic with custom Volt Green accents and animations",
+            "Documented athlete transformations, coach rosters, and membership reservation flows"
+        ]
+    },
+    {
+        w_no: 5,
         w_name: "Chatting Application (Web)",
         w_category: "web",
         w_badge: "Full Stack Web",
@@ -97,7 +122,7 @@ const mywork_data = [
         w_live: "https://ondeal-chat-app.vercel.app/"
     },
     {
-        w_no: 5,
+        w_no: 6,
         w_name: "AI Software Company Website",
         w_category: "web",
         w_badge: "Enterprise Web",
@@ -109,7 +134,7 @@ const mywork_data = [
         w_live: "https://profound-douhua-2992fc.netlify.app/"
     },
     {
-        w_no: 6,
+        w_no: 7,
         w_name: "Movie Discovery App",
         w_category: "web",
         w_badge: "React & REST API",
@@ -121,7 +146,7 @@ const mywork_data = [
         w_live: "https://movie-discovery-app-hazel.vercel.app/"
     },
     {
-        w_no: 7,
+        w_no: 8,
         w_name: "Netflix Clone",
         w_category: "web",
         w_badge: "Streaming Clone",
@@ -133,7 +158,7 @@ const mywork_data = [
         w_live: "https://669a316e28818db0ae4f9f2e--cute-cascaron-e7c739.netlify.app/"
     },
     {
-        w_no: 8,
+        w_no: 9,
         w_name: "Global Seller Platform",
         w_category: "web",
         w_badge: "E-Commerce",
@@ -143,18 +168,6 @@ const mywork_data = [
         w_tags: ["MERN Stack", "Express", "Redux", "SQL / NoSQL"],
         w_link: "https://github.com/Ritikjain91/global-seller-platform",
         w_live: "https://global-seller-platform.vercel.app/"
-    },
-    {
-        w_no: 9,
-        w_name: "Task Management App",
-        w_category: "web",
-        w_badge: "Productivity Tool",
-        w_desc: "Collaborative productivity workspace with interactive task boards, priority filters, automated status badges, and deadlines.",
-        w_img: project6_img,
-        w_screenshots: [project6_img],
-        w_tags: ["React", "TypeScript", "Context API", "Local Storage"],
-        w_link: "https://github.com/Ritikjain91/task-manager",
-        w_live: "https://task-manager-app.vercel.app/"
     }
 ];
 
